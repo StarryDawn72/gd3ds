@@ -1,7 +1,7 @@
 #pragma once
 #include <c2d/base.h>
 
-typedef struct
+struct
 {
 	float pos[3];
 	float texcoord[2];
@@ -9,7 +9,7 @@ typedef struct
 	u32 color;
 } C2Di_Vertex;
 
-typedef struct
+struct
 {
 	DVLB_s* shader;
 	shaderProgram_s program;
@@ -103,7 +103,7 @@ static inline void C2Di_SetTex(C3D_Tex* tex)
 	}
 }
 
-typedef struct
+struct
 {
 	float topLeft[2];
 	float topRight[2];

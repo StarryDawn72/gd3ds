@@ -14,19 +14,19 @@
 
 #define MAX_TEXT_LEN 64
 
-typedef struct {
+struct Color {
     unsigned char r,g,b;
-} Color;
+};
 
-typedef struct {
+struct HSV {
     float h;
     float s;
     float v;
     bool sChecked;
     bool vChecked;
-} HSV;
+};
 
-typedef enum {
+enum class GDValueType {
     GD_VAL_INT,
     GD_VAL_FLOAT,
     GD_VAL_BOOL,
@@ -34,18 +34,18 @@ typedef enum {
     GD_VAL_INT_ARRAY,
     GD_VAL_STRING,
     GD_VAL_UNKNOWN
-} GDValueType;
+};
 
-typedef union {
+union GDValue {
     int i;
     float f;
     bool b;
     HSV hsv;
     short int_array[MAX_GROUPS_PER_OBJECT];
     char *str;
-} GDValue;
+};
 
-typedef struct {
+struct ColorTrigger {
     bool spawn_triggered;
     bool multi_triggered;
     float trig_duration;
@@ -58,9 +58,9 @@ typedef struct {
     int copied_color_id;
     float opacity;
     HSV copied_hsv;
-} ColorTrigger;
+};
 
-typedef struct {
+struct MoveTrigger {
     bool spawn_triggered;
     bool multi_triggered;
     float trig_duration;
@@ -70,17 +70,17 @@ typedef struct {
     int move_easing;
     bool lock_to_player_x;
     bool lock_to_player_y;
-} MoveTrigger;
+};
 
-typedef struct {
+struct AlphaTrigger {
     bool spawn_triggered;
     bool multi_triggered;
     float trig_duration;
     int target_group;
     float trigger_opacity;
-} AlphaTrigger;
+};
 
-typedef struct {
+struct PulseTrigger {
     bool spawn_triggered;
     bool multi_triggered;
     float trig_duration;
@@ -99,17 +99,17 @@ typedef struct {
     int pulse_target_type;
     bool pulse_main_only;
     bool pulse_detail_only;
-} PulseTrigger;
+};
 
-typedef struct {
+struct ToggleTrigger {
     bool spawn_triggered;
     bool multi_triggered;
     int target_group;
     bool activate_group;
     bool spawn_only;
-} ToggleTrigger;
+};
 
-typedef struct {
+struct {
     bool spawn_triggered;
     bool multi_triggered;
     int target_group;
@@ -117,28 +117,28 @@ typedef struct {
     float trig_duration;
 } SpawnTrigger;
 
-typedef struct {
+struct TextObject {
     char text[MAX_TEXT_LEN + 1];
     unsigned char len;
     unsigned char layout_done;
     unsigned char glyph_count;
     TextGlyphPlacement glyphs[MAX_TEXT_LEN];
-} TextObject;
+};
 
-typedef struct {
+struct TriggerPool {
     void *data;
     size_t count;
     size_t capacity;
-} TriggerPool;
+};
 
-typedef enum {
+enum class ObjectFlags {
     FLAG_TOGGLED    = (1 << 0),
     FLAG_DONT_FADE  = (1 << 1),
     FLAG_DONT_ENTER = (1 << 2),
     FLAG_CAN_BE_X_MOVED = (1 << 3)
-} ObjectFlags;
+};
 
-typedef struct {
+struct ObjectsArray {
     int count;
 
     int *random;
@@ -209,9 +209,9 @@ typedef struct {
 
     u8 *activated;
     u8 *collided;
-} ObjectsArray;
+};
 
-typedef struct {
+struct GDColorChannel {
     int fromRed;
     int fromGreen;
     int fromBlue;
@@ -229,15 +229,15 @@ typedef struct {
     float toOpacity;
     float duration;
     bool copyOpacity;
-} GDColorChannel;
+};
 
 
-typedef struct SectionTriggers {
+struct SectionTriggers {
     int count, capacity;
     int indices[];
-} SectionTriggers;
+};
 
-typedef struct Section {
+struct Section {
     int *objects;
     int object_count;
     int object_capacity;
@@ -245,9 +245,9 @@ typedef struct Section {
 
     int x, y; // Section coordinates
     struct Section *next; // For chaining in hash map
-} Section;
+};
 
-typedef struct {
+struct LoadedLevelInfo {
     float last_obj_x;
     float wall_x;
     float wall_y;
@@ -269,10 +269,10 @@ typedef struct {
 
     char level_name[256];
     char creator_name[256];
-} LoadedLevelInfo;
+};
 
 
-typedef enum {
+enum class LevelLoadError {
     LOAD_NO_ERROR,
     LOAD_INVALID_GMD,
     LOAD_INVALID_COMPRESSED_DATA,
@@ -281,7 +281,7 @@ typedef enum {
     LOAD_COULDNT_PARSE_OBJECTS,
     LOAD_INVALID_BASE64,
     LOAD_ERROR_COUNT,
-} LevelLoadError;
+};
 
 extern TriggerPool col_pool;
 extern TriggerPool move_pool;

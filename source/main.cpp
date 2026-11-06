@@ -1117,7 +1117,7 @@ void game_loop() {
 
                     trail = &trail_p1;
                     wave_trail = &wave_trail_p1;
-                    handle_player(&state.player);
+                    handlePlayer(&state.player);
                     state.player.gravity_changed_move |= state.player.upside_down != player1_upside_down_before;
                     handle_mirror_transition();
 
@@ -1141,7 +1141,7 @@ void game_loop() {
 
                         curr_input = state.input_p2;
                         curr_old_input = state.old_input_p2;
-                        handle_player(&state.player2);
+                        handlePlayer(&state.player2);
                         state.player2.gravity_changed_move |= state.player2.upside_down != player2_upside_down_before;
 
                         //revert state back to first player

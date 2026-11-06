@@ -21,7 +21,7 @@ static u32 frame_start;
 static u32 frame_end;
 static u32 frame_substeps;
 
-typedef struct PreciseSource {
+struct PreciseSource {
     u32 tick_word;
     u32 idx_word;
 
@@ -45,7 +45,7 @@ typedef struct PreciseSource {
     bool pressed_edge;
 } PreciseSource;
 
-typedef struct {
+struct {
     u32 now;
     u32 latest_tick;
     u32 prev_tick;

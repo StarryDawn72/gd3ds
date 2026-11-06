@@ -1,32 +1,32 @@
 #pragma once
 #include <3ds/types.h>
 
-typedef struct UIAction UIAction;
-typedef struct UIActionDef UIActionDef;
+struct UIAction UIAction;
+struct UIActionDef UIActionDef;
 
-typedef struct {
+struct {
     const char *key;
     const char *value;
 } UIProperty;
 
-typedef struct {
+struct {
     UIProperty *properties;
     size_t count;
     //This is used for UIPropertyLists whose properties should survive outside of the .txt file
     bool duplicate;
 } UIPropertyList;
 
-typedef struct {
+struct {
     const char *name;
     u32 value;
 } UIBitfieldEntry;
 
-typedef struct {
+struct {
     const char *name;
     float value;
 } UIFloatEnumEntry;
 
-typedef struct {
+struct {
     const char *name;
     int value;
 } UIIntEnumEntry;

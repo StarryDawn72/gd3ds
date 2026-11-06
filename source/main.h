@@ -44,9 +44,9 @@
 // Increment this every time new properties are added to the server entries
 #define SAVED_LEVELS_VERSION 2
 
-typedef struct {
+struct Vec2D {
     float x, y;
-} Vec2D;
+};
 
 extern float delta;
 extern float frame_timer;
@@ -104,13 +104,13 @@ enum GameState {
     STATE_EXIT
 };
 
-typedef enum Cheats {
+enum class Cheats {
     CHEAT_NOCLIP,
     CHEAT_HITBOX_DISPLAY,
     CHEAT_COUNT
 } Cheats;
 
-typedef enum Screens {
+enum class Screens {
     SCREEN_TOP,
     SCREEN_BTM
 } Screens;

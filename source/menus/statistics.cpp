@@ -14,7 +14,7 @@
 
 static UIList *list;
 
-typedef struct StatisticEntries {
+struct StatisticEntries {
     char *name;
     int *value;
 } StatisticEntries;

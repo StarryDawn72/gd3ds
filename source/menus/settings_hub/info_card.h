@@ -2,7 +2,7 @@
 #include <3ds.h>
 #include "menus/core/ui_screen.h"
 
-typedef struct {
+struct {
     bool copied;
     const char *text;
     bool customTitle;

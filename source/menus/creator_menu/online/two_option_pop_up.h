@@ -1,7 +1,7 @@
 #pragma once
 #include "menus/core/ui_stack.h"
 
-typedef struct {
+struct {
     const char *text;
     const char *title;
     const char *cancel_text;

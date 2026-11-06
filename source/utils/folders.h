@@ -5,13 +5,13 @@
 
 #include <3ds.h>
 
-typedef struct {
+struct {
     char name[MAX_PATH_LEN];
     bool is_dir;
 } FileOrFolder;
 
 
-typedef struct GenericTask GenericTask;
+struct GenericTask GenericTask;
 
 FileOrFolder *load_folder(GenericTask *task, char *dir, int *count);
 void go_back_directory(char *path);

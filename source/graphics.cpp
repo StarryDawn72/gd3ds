@@ -1847,7 +1847,7 @@ void create_objects() {
 
 #define MAX_DASH_FX 8
 
-typedef struct {
+struct {
     bool active;
     bool exit;
     float x, y;

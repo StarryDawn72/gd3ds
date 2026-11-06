@@ -11,7 +11,7 @@
 ProfilerSnapshot snapshot;
 static ProfilerSnapshot internal_snapshot;
 
-typedef enum {
+enum class {
     PROFILER_PAGE_OVERVIEW,
     PROFILER_PAGE_RENDER,
     PROFILER_PAGE_GAMEPLAY,
@@ -30,7 +30,7 @@ static ProfilerPage current_page = PROFILER_PAGE_OVERVIEW;
 #define PROFILER_SEC_VALUE_X 260.f
 #define PROFILER_START_Y 25.f
 
-typedef enum {
+enum class {
     PROFILER_VALUE_NONE,
     PROFILER_VALUE_FLOAT,
     PROFILER_VALUE_FPS,
@@ -39,7 +39,7 @@ typedef enum {
     PROFILER_VALUE_HEX
 } ProfilerValueType;
 
-typedef enum {
+enum class {
     PROFILER_STAT_NONE,
 
     PROFILER_STAT_FRAME,
@@ -88,7 +88,7 @@ typedef enum {
     PROFILER_STAT_HEAP_TOTAL,
 } ProfilerStat;
 
-typedef struct {
+struct {
     const char *label;
     ProfilerStat stat;
     ProfilerValueType value_type;

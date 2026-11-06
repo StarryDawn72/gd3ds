@@ -2,41 +2,41 @@
 
 #include <stddef.h>
 
-typedef enum {
- ICON_COLOR_WHITE = 0,
- ICON_COLOR_P1,
- ICON_COLOR_P2,
- ICON_COLOR_GLOW
-} IconColorType;
+enum class IconColorType {
+    ICON_COLOR_WHITE = 0,
+    ICON_COLOR_P1,
+    ICON_COLOR_P2,
+    ICON_COLOR_GLOW
+};
 
-typedef struct {
- int atlas;
- int texture;
- float x,y;
- float scale_x, scale_y;
- int flip_x, flip_y;
- int z;
- float rot;
- IconColorType color_type;
- float opacity;
- int animation_part;
-} IconPart;
+struct IconPart {
+    int atlas;
+    int texture;
+    float x,y;
+    float scale_x, scale_y;
+    int flip_x, flip_y;
+    int z;
+    float rot;
+    IconColorType color_type;
+    float opacity;
+    int animation_part;
+};
 
-typedef struct {
- int part_count;
- const IconPart* parts;
-} Icon;
+struct Icon {
+    int part_count;
+    const IconPart* parts;
+};
 
-typedef enum {
- GAMEMODE_PLAYER,
- GAMEMODE_SHIP,
- GAMEMODE_BALL,
- GAMEMODE_UFO,
- GAMEMODE_WAVE,
- GAMEMODE_ROBOT,
- GAMEMODE_SPIDER,
- GAMEMODE_COUNT
-} IconGamemode;
+enum class IconGamemode {
+    GAMEMODE_PLAYER,
+    GAMEMODE_SHIP,
+    GAMEMODE_BALL,
+    GAMEMODE_UFO,
+    GAMEMODE_WAVE,
+    GAMEMODE_ROBOT,
+    GAMEMODE_SPIDER,
+    GAMEMODE_COUNT
+};
 
 #define GAMEMODE_COUNT 7
 #define ICON_GAMEMODE_COUNT 7

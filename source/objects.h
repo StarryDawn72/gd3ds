@@ -8,14 +8,14 @@
 #define SPRITESHEET4_START (SPRITESHEET3_START + 601)
 #define ANIMATEDSHEET_START (SPRITESHEET4_START + 670)
 
-typedef enum {
+enum class {
    COLLISION_NONE = 0,
    COLLISION_BOX,
    COLLISION_CIRCLE,
    COLLISION_SLOPE
 } CollisionShape;
 
-typedef enum {
+enum class {
    COLOR_TYPE_BASE = 0,
    COLOR_TYPE_DETAIL,
    COLOR_TYPE_BLACK,
@@ -23,19 +23,19 @@ typedef enum {
    COLOR_TYPE_GLOW,
    COLOR_TYPE_ONLY_DETAIL,} ColorType;
 
-typedef enum {
+enum class {
    HITBOX_SPECIAL = 0,
    HITBOX_SOLID,
    HITBOX_HAZARD
 } HitboxType;
 
-typedef enum {
+enum class {
    ANIMATION_NONE = 0,
    ANIMATION_MOVEMENT,
    ANIMATION_FRAME_SWAP
 } AnimationType;
 
-typedef struct {
+struct {
     int texture;
     float x, y;
     float scale_x, scale_y;
@@ -47,31 +47,31 @@ typedef struct {
     float opacity;
 } ChildSprite;
 
-typedef struct {
+struct {
     int start;
     int count;
 } ChildGroup;
 
-typedef struct {
+struct {
     int texture;
     int flip_x, flip_y;
 } SwapFrame;
 
-typedef struct {
+struct {
     int slot;
     float fps;
     int start;
     int count;
 } SlotFrames;
 
-typedef struct {
+struct {
    int collision_type;
    float x, y;
    float width, height;
    int type;
 } ObjectHitbox;
 
-typedef struct {
+struct {
     int texture;
     int glow_frame;
     float x, y;

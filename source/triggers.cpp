@@ -138,7 +138,7 @@ PulseTriggerBuffer *get_new_pulse_trigger() {
     return buffer;
 }
 
-typedef struct {
+struct {
     bool saved;
     float rotation;
     float visual_rotation;

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "triggers.h"
 
-typedef struct GroupCombination {
+struct GroupCombination {
     short groups[MAX_GROUPS_PER_OBJECT];
     unsigned char group_count;
     int *objects;

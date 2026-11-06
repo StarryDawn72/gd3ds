@@ -2,7 +2,7 @@
 #include "menus/core/ui_screen.h"
 #include <3ds.h>
 
-typedef enum {
+enum class {
     PAGE_GRAPHICS,
     PAGE_INPUT,
     PAGE_MISC,
@@ -10,7 +10,7 @@ typedef enum {
     PAGE_COSMETIC
 } SettingPage;
 
-typedef struct {
+struct {
     const char *id;      
     const char *label;          // Setting name
     const char *additionalInfo; // Extra info popup message
@@ -27,7 +27,7 @@ typedef struct {
     bool (*condition)();
 } Setting;
 
-typedef struct {
+struct {
     bool wideEnabled;
     bool stereoEnabled;
     bool particlesDisabled;

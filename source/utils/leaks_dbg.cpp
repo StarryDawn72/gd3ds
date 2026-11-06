@@ -3,7 +3,7 @@
 #include "main.h"
 #include "leaks_dbg.h"
 
-typedef struct Allocation {
+struct Allocation {
     void *ptr;
     size_t size;
     void *caller;

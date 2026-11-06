@@ -1,20 +1,16 @@
 #pragma once
+#include <vector>
 
-typedef struct {
-    int   texture_idx;
+struct PlayerSpritePart {
+    int   textureIndex;
     float px, py;
     float rotation;
-    float scale_x, scale_y;
-    int   z_order;
-} PlayerSpritePart;
+    float sx, sy;
+    int   zOrder;
+};
 
-typedef struct {
-    const PlayerSpritePart *parts;
-    int   part_count;
+struct PlayerFrame {
+    std::vector<PlayerSpritePart> parts;
+    int part_count;
     float delay;
-} PlayerFrame;
-
-typedef struct {
-    const PlayerFrame *frames;
-    int   frame_count;
-} PlayerAnimation;
+};

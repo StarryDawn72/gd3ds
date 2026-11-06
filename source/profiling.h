@@ -1,14 +1,14 @@
 #pragma once
 #include <3ds.h>
 
-typedef struct {
+struct {
     touchPosition touchPos;
     u32 kDown;
     int steps;
     float processingTime;
 } ProfilerUpdateData;
 
-typedef struct {
+struct {
     // General
     float frame_ms;
     float cpu_ms;

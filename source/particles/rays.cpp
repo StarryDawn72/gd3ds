@@ -5,7 +5,7 @@
 #include "utils/gfx.h"
 #include "easing.h"
 
-typedef struct {
+struct {
     Vec2D position;
     
     float start_delay;

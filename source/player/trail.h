@@ -14,11 +14,11 @@
 #define TRAIL_CLEAR_DISTANCE 30.f
 #define STATIONARY_TRAIL_CHUNK_SIZE 64.f
 
-typedef struct {
+struct {
     float u, v;
 } Tex2F;
 
-typedef struct {
+struct {
     bool appendNewPoints;
     bool startingPositionInitialized;
     bool waveTrail;
@@ -62,7 +62,7 @@ typedef struct {
     bool stationary;
 } MotionTrail;
 
-typedef struct {
+struct {
     float fade;
     float width;
     bool always_on;

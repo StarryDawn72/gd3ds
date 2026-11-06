@@ -4,7 +4,7 @@
 
 #define MAX_OBJECT_PS 48
 
-typedef struct {
+struct {
     ParticleSystem ps;
     int id;
     bool occupied;

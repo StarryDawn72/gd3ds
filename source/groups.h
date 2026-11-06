@@ -4,7 +4,7 @@
 
 #include <stdbool.h>
 
-typedef struct GroupNode {
+struct GroupNode {
     float alpha;
     bool toggled;
     int *objects;
@@ -14,7 +14,7 @@ typedef struct GroupNode {
     int *combinations;
     int combination_count;
     int combination_capacity;
-} GroupNode;
+};
 
 bool build_group_combinations(void);
 void begin_group_combination_move_step(void);

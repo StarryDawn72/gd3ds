@@ -3,7 +3,7 @@
 #include "ui_screen.h"
 #include "graphics.h"
 
-typedef struct UIScreenPair {
+struct UIScreenPair {
     const char* name;
     //top and bottom screen
     UIScreen screens[2];  
@@ -14,7 +14,7 @@ typedef struct UIScreenPair {
     void (*free_data)(void *data);
 } UIScreenPair;
 
-typedef enum {
+enum class {
     PUSH_NONE,
     PUSH_NEXT,
     PUSH_AFTER_CLOSE,
@@ -22,7 +22,7 @@ typedef enum {
     PUSH_GAME_STATE
 } UIStackPushType;
 
-typedef struct {
+struct {
     const UIScreenDefPair *defs;
     UIAnimation top_anim;
     UIAnimation btm_anim;
@@ -31,7 +31,7 @@ typedef struct {
     void *data;
 } UIStackPush;
 
-typedef struct {
+struct {
     //array of pointers to UIScreenPairs
     UIScreenPair **screen_stack;
     size_t stack_capacity;

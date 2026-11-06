@@ -27,18 +27,18 @@
 
 extern int current_pulserod_ball_image;
 
-typedef enum {
+enum class FadeStatus {
     FADE_STATUS_NONE,
     FADE_STATUS_OUT,
     FADE_STATUS_IN
-} FadeStatus;
+};
 
-typedef struct {
+struct QuadParams {
     C2Di_Quad quadr;
     float tcTopLeft[2], tcTopRight[2], tcBotLeft[2], tcBotRight[2];
-} QuadParams;
+};
 
-typedef struct {
+struct SpriteObject {
     C2D_Sprite spr;
     u32 tint;
     QuadParams params;
@@ -51,14 +51,14 @@ typedef struct {
     unsigned char layer;
     bool blending;
     bool hidden;
-} SpriteObject;
+};
 
-typedef struct {
+struct SortItem {
     SpriteObject *obj;
     uint32_t key;
-} SortItem;
+};
 
-enum FadingEffects {
+enum class FadingEffects {
     FADE_NONE,
     FADE_SIMPLE,
     FADE_UP,
@@ -80,12 +80,12 @@ enum FadingEffects {
     FADE_COUNT
 };
 
-typedef struct {
+struct SpriteTemplate {
     C2D_Sprite parent_template;
     C2D_Sprite glow_template;
     int child_count;
     C2D_Sprite *child_templates;
-} SpriteTemplate;
+};
 
 void cache_all_sprites();
 void free_cached_sprites();
@@ -149,7 +149,7 @@ void draw_ground(float cam_x, float cam_y, float y, bool is_ceiling, int screen_
 void update_player_colors();
 void set_player_colors(Color p1, Color p2, Color glow);
 
-typedef struct {
+struct IconParameters {
     int anim_id;
     int anim_frame;
     float anim_timer;
@@ -157,7 +157,7 @@ typedef struct {
     int blend_from_frame;
     float blend_from_timer;
     float blend_fraction;
-} IconParameters;
+};
 
 void spawn_icon_at(
     int gamemode,
@@ -174,6 +174,7 @@ void spawn_icon_at(
     u32 glow_color,
     IconParameters params
 );
+
 void spawn_p1_layer_at(
     int gamemode,
     int id,

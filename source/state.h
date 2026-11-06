@@ -26,7 +26,7 @@ void level_unrated_online_refresh(void);
 
 u32 user_coin_icon_tint(bool collected, bool has_rate);
 
-typedef struct {
+struct {
     float x;
     float y;
     float width;
@@ -35,7 +35,7 @@ typedef struct {
     InternalHitbox internal_hitbox;
 } PlayerHitboxTrail;
 
-typedef struct KeyInput {
+struct KeyInput {
     u8 pressedJump:1;
     u8 holdJump:1;
 } KeyInput;
@@ -48,7 +48,7 @@ typedef struct KeyInput {
 #define RESPAWN_EFFECT_REPEAT 4
 #define RESPAWN_EFFECT_DURATION (12.f / STEPS_HZ)
 
-typedef enum {
+enum class {
     DEATH_TITLE_SCREEN_KILL,
     DEATH_SPIKE,
     DEATH_SAW,
@@ -59,27 +59,27 @@ typedef enum {
     DEATH_REASON_COUNT
 } DeathReason;
 
-typedef enum {
+enum class {
     FLASH_NONE,
     FLASH_FIRST_LIGHT,
     FLASH_UNLIGHTED,
     FLASH_SECOND_LIGHT
 } FlashState;
 
-typedef struct {
+struct {
     bool flashing;
     FlashState state;
     float timer;
     bool use_lbg;
 } BGFlashData;
 
-typedef enum {
+enum class {
     RESPAWN_EFFECT_NONE,
     RESPAWN_EFFECT_SHOW_PLAYER,
     RESPAWN_EFFECT_HIDE_PLAYER
 } RespawnEffectState;
 
-typedef struct {
+struct {
     bool active;
     bool hide_player;
     RespawnEffectState state;
@@ -87,7 +87,7 @@ typedef struct {
     int remaining;
 } RespawnEffectData;
 
-typedef struct {
+struct {
     int attempts;
     int jumps;
     float time_start;
@@ -99,13 +99,13 @@ typedef struct {
     bool coin3;
 } StateLevelData;
 
-typedef struct {
+struct {
     bool active;
     float timer;
     float strength;
 } ShakeData;
 
-typedef struct {
+struct {
     float unmod_cam_x;
     float unmod_cam_y;
 

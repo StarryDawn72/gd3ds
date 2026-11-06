@@ -22,12 +22,12 @@ extern const int epics[4];
 
 extern const UIScreenDefPair online_def;
 
-typedef struct {
+struct {
     bool wasUpdated;
     float version;
 } VersionWarningData;
 
-typedef struct {
+struct {
     int entryId;
     int levelId;
     int redownload;

@@ -43,7 +43,7 @@ extern int pulse_trigger_count;
 extern int rotate_trigger_count;
 extern int rotate_trigger_capacity;
 
-typedef struct {
+struct {
     Color color;
     Color non_pulse_color;
     float alpha;
@@ -53,7 +53,7 @@ typedef struct {
     int num_pulses;
 } ColorChannel;
 
-typedef struct {
+struct {
     bool active;
     Color old_color;
     Color new_color;
@@ -65,7 +65,7 @@ typedef struct {
     HSV copied_hsv;
 } ColTriggerBuffer;
 
-typedef struct {
+struct {
     bool active;
     bool restored_from_checkpoint;
     int target_group;
@@ -76,7 +76,7 @@ typedef struct {
     float time_run;
 } AlphaTriggerBuffer;
 
-typedef struct {
+struct {
     bool active;
     bool restored_from_checkpoint;
     int target_group;
@@ -92,7 +92,7 @@ typedef struct {
     float time_run;
 } MoveTriggerBuffer;
 
-typedef struct {
+struct {
     bool active;
     bool queued;
     bool restored_from_checkpoint;
@@ -107,7 +107,7 @@ typedef struct {
 #define PULSE_MODE_COLOR 0
 #define PULSE_MODE_HSV 1
 
-typedef struct {
+struct {
     bool active;
     Color color;
     int target_color_id;
@@ -133,7 +133,7 @@ typedef struct {
     bool restored_from_checkpoint;
 } PulseTriggerBuffer;
 
-typedef struct {
+struct {
     bool spawn_triggered;
     bool multi_triggered;
     float trig_duration;
@@ -146,12 +146,12 @@ typedef struct {
     float easing_rate;
 } RotateTrigger;
 
-typedef struct {
+struct {
     int obj;
     float rotation;
 } RotateTargetState;
 
-typedef struct {
+struct {
     bool active;
     bool restored_from_checkpoint;
     bool use_center;

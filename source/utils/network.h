@@ -15,7 +15,7 @@
 
 #define TIMEOUT_DURATION 15
 
-typedef struct SearchFilters {
+struct SearchFilters {
     bool uncompleted:1;
     bool completed:1;
     bool original:1;
@@ -39,9 +39,9 @@ typedef struct SearchFilters {
     char searchQuery[20];
 } SearchFilters;
 
-typedef struct GenericTask GenericTask;
+struct GenericTask GenericTask;
 
-typedef struct {
+struct {
     volatile float progress;
     volatile int speed;
 

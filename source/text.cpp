@@ -16,7 +16,7 @@
 static const u32 white_c = ABGR8(255, 255, 255, 255);
 static char wrap_buffer[4096];
 
-typedef struct {
+struct {
     const char *name;
     const u32 color;
 } TagColor;

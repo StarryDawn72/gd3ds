@@ -395,11 +395,11 @@ Setting settings[] = {
     },
 };
 
-typedef struct CheckboxData {
+struct CheckboxData {
     Setting *setting;
 } CheckboxData;
 
-typedef struct InfoButtonData {
+struct InfoButtonData {
     const char *text;
 } InfoButtonData;
 

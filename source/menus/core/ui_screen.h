@@ -5,9 +5,9 @@
 
 #define MAX_ELEMENT_PROPERTIES 64
 
-typedef struct UIScreenPair UIScreenPair;
+struct UIScreenPair UIScreenPair;
 
-typedef struct {
+struct {
     const Charset *charset;
     C2D_SpriteSheet *sheet;    
 } LabelFont;
@@ -20,7 +20,7 @@ enum Fonts {
     NUM_FONTS
 };
 
-typedef enum {
+enum class {
     ANIM_NONE,
     ANIM_ZOOM,
     ANIM_ZOOM_SUBTLE,
@@ -32,18 +32,18 @@ typedef enum {
     NUM_OPEN_ANIMS
 } UIAnimation;
 
-typedef enum {
+enum class {
     UI_TRANSITION_NONE,
     UI_TRANSITION_OPENING,
     UI_TRANSITION_CLOSING
 } UITransitionState;
 
-typedef enum {
+enum class {
     UI_DRAW_BEFORE,
     UI_DRAW_AFTER
 } UIDrawPhase;
 
-typedef struct {
+struct {
     UIAnimation animation;
     UITransitionState state;
 
@@ -58,7 +58,7 @@ typedef struct {
     bool done;
 } UITransition;
 
-typedef struct {
+struct {
     const char* path;
 
     void (*init)(UIScreen *);
@@ -69,14 +69,14 @@ typedef struct {
     UIActionList action_list;
 } UIScreenDefinition;
 
-typedef struct {
+struct {
     const char *name;
     UIScreenDefinition top;
     UIScreenDefinition btm;
     void (*free_data)(void *data);
 } UIScreenDefPair;
 
-typedef struct UIScreen {
+struct UIScreen {
     UIScreenPair *pair;
     const UIScreenDefinition *def;
 

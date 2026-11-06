@@ -11,7 +11,7 @@
 #define TAGS_PER_ELEMENT 5
 #define TAG_LENGTH 32
 
-typedef enum {
+enum class UIElementType {
     UI_BUTTON,
     UI_IMAGE,
     UI_LABEL,
@@ -32,26 +32,26 @@ typedef enum {
     UI_SLIDER,
     UI_ONLINE_LEVEL_CARD,
     UI_RECTANGLE,
-} UIElementType;
+};
 
-typedef struct UIInput UIInput;
-typedef struct UITransform UITransform;
-typedef struct UIElement UIElement;
-typedef struct UIScreen UIScreen;
+struct UIInput UIInput;
+struct UITransform UITransform;
+struct UIElement UIElement;
+struct UIScreen UIScreen;
 
 typedef void (*UIActionFn)(UIElement *e, const UIPropertyList *args);
 
-typedef struct UIAction {
+struct UIAction {
     UIActionFn action;
     UIPropertyList args;
 } UIAction;
 
-typedef struct UIActionDef {
+struct UIActionDef {
     const char* name;
     UIActionFn fn;
 } UIActionDef;
 
-typedef struct {
+struct {
     const UIActionDef *actions;
     const size_t action_count;
 } UIActionList;
@@ -82,14 +82,14 @@ void ui_element_apply_properties(UIElement *e, UIScreen *screen, const UIPropert
 
 void perform_actions(UIElement *e);
 
-typedef struct UITransform {
+struct UITransform {
     float x;
     float y;
     float scaleX;
     float scaleY;
 } UITransform;
 
-typedef struct UIInput {
+struct UIInput {
     u32 down;
     u32 held;
     u32 up;
@@ -149,12 +149,12 @@ struct UIElement {
     void (*on_disable)(UIElement*);
 };
 
-typedef struct {
+struct {
     C2D_Sprite sprite;
     C2D_ImageTint tint;
 } ImageData;
 
-typedef struct {
+struct {
     UIElement base;
 
     ImageData image;
@@ -162,14 +162,14 @@ typedef struct {
     bool useTint;
 } UIImage;
 
-typedef enum ButtonAnimType {
+enum class ButtonAnimType {
     BUTTON_ANIM_NORMAL,
     BUTTON_ANIM_PULL,
     //uninmplemented lel
     BUTTON_ANIM_DARKEN
 } ButtonAnimType;
 
-typedef struct {
+struct {
     UIElement base;
 
     ImageData image;
@@ -195,13 +195,13 @@ typedef struct {
     bool invisible;
 } UIButton;
 
-typedef struct {
+struct {
     UIButton  base;
 
     bool checked;
 } UICheckBox;
 
-typedef struct {
+struct {
     UIElement base;
     
     C2D_Image atlas;
@@ -210,7 +210,7 @@ typedef struct {
     int border;
 } UIWindow;
 
-typedef struct {
+struct {
     UIElement base;
 
     C2D_Image atlas;
@@ -221,7 +221,7 @@ typedef struct {
     int border;
 } UITextbox;
 
-typedef struct {
+struct {
     UIElement base;
     
     char text[1024];
@@ -231,7 +231,7 @@ typedef struct {
     bool parse_tags;
 } UILabel;
 
-typedef struct {
+struct {
     UIButton base;
 
     int gamemode;
@@ -244,7 +244,7 @@ typedef struct {
     bool glow;
 } UIIcon;
 
-typedef struct {
+struct {
     UIButton base;
 
     int index;
@@ -255,7 +255,7 @@ typedef struct {
     bool isSelected;
 } UIColor;
 
-typedef struct {
+struct {
     UIButton base;
 
     C2D_Image atlas;
@@ -263,7 +263,7 @@ typedef struct {
     int border;
 } UIWindowButton;
 
-typedef struct {
+struct {
     UIElement base;
     
     ImageData image;
@@ -272,7 +272,7 @@ typedef struct {
     bool fullScreen;
 } UIDarken;
 
-typedef struct {
+struct {
     UIElement base;
 
     ImageData frame;
@@ -288,7 +288,7 @@ typedef struct {
     bool useTint;
 } UIProgressBar;
 
-typedef struct {
+struct {
     UIElement base;
 
     int scrollY;
@@ -302,13 +302,13 @@ typedef struct {
     u32 background_color;
 } UIList;
 
-typedef struct {
+struct {
     UIElement base;
     
     ParticleSystem particle;
 } UIParticle;
 
-typedef struct {
+struct {
     UIElement base;
 
     UseEffectPool useEffects;
@@ -317,7 +317,7 @@ typedef struct {
     float yPos[MAX_USE_EFFECTS];
 } UIUseEffect;
 
-typedef struct {
+struct {
     UIElement base;
 
     float max_value;
@@ -330,26 +330,26 @@ typedef struct {
     C2D_Sprite button;
 } UISlider;
 
-typedef struct {
+struct {
     UIElement base;
 
     float spacing;
 } UIPaletteIcons;
 
-typedef struct {
+struct {
     UIElement base;
 
     u32 color;
 } UIRectangle;
 
-typedef struct {
+struct {
     UIImage base;
 
     float rotation_speed;
     bool blending;
 } UISpinner;
 /*
-typedef struct {
+struct {
     
     UIImageData icon;
     UILabelData label;
@@ -360,13 +360,13 @@ typedef struct {
     bool swap_color;
 } UIExternalLevelCardData;
 
-typedef struct {
+struct {
     UILabelData stat_name;
     int value;
     bool swap_color;
 } UIStatisticCardData;
 
-typedef struct {
+struct {
     UILabelData name;
     UILabelData creator;
     UILabelData song;

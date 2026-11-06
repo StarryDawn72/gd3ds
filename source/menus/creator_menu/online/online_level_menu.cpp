@@ -150,7 +150,7 @@ static UIButton *song_download_button;
 bool in_warning = false;
 bool in_warning_screen = false;
 
-typedef enum WarningPopupStep {
+enum class WarningPopupStep {
     WARNING_HIGH_OBJECT,
     WARNING_VERSION,
     WARNING_MISSING_SONG,

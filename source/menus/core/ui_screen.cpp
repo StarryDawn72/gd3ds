@@ -53,7 +53,7 @@ UIScreen default_screen = {
 };
 UIScreen default_screen_top;
 
-typedef struct {
+struct {
     const char *name;
     UICreateFn create;
 } UIElementConstructor;
@@ -521,7 +521,7 @@ UIElement *ui_get_element_by_tag(UIScreen *screen, const char *tag) {
     return NULL;
 }
 
-typedef struct {
+struct {
     const char *tag;
     void (*func)(UIElement *);
 } UITagVisitorData;

@@ -1,7 +1,7 @@
 #pragma once
 #include <3ds.h>
 
-typedef struct {
+struct {
     int16_t* data;
     u32 sampleCount;
     int sampleRate;

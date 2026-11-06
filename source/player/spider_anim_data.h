@@ -1,16 +1,254 @@
 #pragma once
 
+#include <array>
 #include "player_anim_data.h"
 
-#define SPIDER_SPRITE_COUNT 13
+namespace gd3ds
+{
 
-typedef enum {
-    SPIDER_ANIM_RUN = 0,
-    SPIDER_ANIM_JUMP = 1,
-    SPIDER_ANIM_FALL = 2,
-    SPIDER_ANIM_WALK = 3,
-    SPIDER_ANIM_IDLE = 4,
-    SPIDER_ANIM_COUNT = 5,
-} SpiderAnimId;
+enum class SpiderAnimId {
+    Run,
+    Jump,
+    Fall,
+    Walk,
+    Idle
+};
 
-extern const PlayerAnimation spider_animations[SPIDER_ANIM_COUNT];
+namespace constants {
+    inline constexpr int kSpiderSpriteCount = 13;
+
+    inline constexpr auto kSpiderRunFrame001 = std::to_array<PlayerSpritePart>({
+        { 2, 6.1875f, -0.1125f, -335.9836f, -0.8837f, 0.8837f, 0 },
+        { 2, 1.5500f, -1.6750f, -20.9863f, 0.8100f, 0.8837f, 1 },
+        { 6, -1.8625f, 0.4500f, -21.7204f, 1.1588f, 0.9999f, 2 },
+        { 0, 0.1500f, 1.5625f, 0.2981f, 1.0000f, 1.0000f, 3 },
+        { 4, -4.2750f, -3.8125f, 24.5583f, 1.2994f, 0.8144f, 4 },
+        { 2, -0.5625f, -3.2250f, 0.0000f, 1.0000f, 1.0000f, 5 },
+    });
+
+    inline constexpr auto kSpiderRunFrame002 = std::to_array<PlayerSpritePart>({
+        { 2, 7.1500f, -1.1250f, -12.9152f, -0.8837f, 0.9461f, 0 },
+        { 2, -0.5375f, -3.5250f, -6.5614f, 0.8359f, 0.8838f, 1 },
+        { 6, -3.5500f, 0.1000f, -5.2267f, 1.0500f, 0.9999f, 2 },
+        { 0, 0.1500f, 2.0750f, -0.2693f, 1.0000f, 1.0000f, 3 },
+        { 4, -7.7625f, -3.9000f, 39.9356f, 1.1232f, 0.9515f, 4 },
+        { 2, -2.9125f, -1.2500f, 20.2265f, 1.0000f, 1.0000f, 5 },
+    });
+
+    inline constexpr auto kSpiderRunFrame003 = std::to_array<PlayerSpritePart>({
+        { 2, 5.8625f, -3.2750f, -3.4727f, -0.8457f, 1.0215f, 0 },
+        { 2, -3.6375f, -2.2500f, 19.4040f, 0.7574f, 0.8838f, 1 },
+        { 6, -3.6875f, -0.3875f, -9.3852f, 1.6811f, 1.0000f, 2 },
+        { 0, 0.1500f, 2.8500f, -1.5410f, 0.9999f, 0.9999f, 3 },
+        { 4, -10.7750f, -3.9125f, 53.8582f, 0.9999f, 1.2351f, 4 },
+        { 2, 1.2250f, -0.8875f, 22.1769f, 1.0000f, 1.0000f, 5 },
+    });
+
+    inline constexpr auto kSpiderRunFrame004 = std::to_array<PlayerSpritePart>({
+        { 2, 1.5000f, -3.5750f, -350.5085f, -0.8837f, 0.8837f, 0 },
+        { 2, -0.6375f, -0.9750f, 26.4551f, 0.8152f, 0.8463f, 1 },
+        { 6, -4.0375f, 1.1000f, -5.9498f, 1.2185f, 1.0000f, 2 },
+        { 0, 0.1500f, 3.2500f, -2.4037f, 1.0000f, 1.0000f, 3 },
+        { 4, -9.6375f, -1.4625f, 59.5173f, 0.9887f, 1.1103f, 4 },
+        { 2, 5.3500f, 0.0000f, -27.7670f, 0.9999f, 0.9999f, 5 },
+    });
+
+    inline constexpr auto kSpiderRunFrame005 = std::to_array<PlayerSpritePart>({
+        { 2, -1.6250f, -1.2250f, -312.3568f, -0.8837f, 0.8837f, 0 },
+        { 2, 2.1750f, 0.5125f, 18.4260f, 0.7950f, 0.9433f, 1 },
+        { 6, -3.0625f, 1.5000f, 0.7457f, 1.1499f, 1.0000f, 2 },
+        { 0, 0.1500f, 2.9125f, -1.8030f, 0.9999f, 0.9999f, 3 },
+        { 4, -7.3875f, -0.7125f, 48.9810f, 1.0000f, 1.0000f, 4 },
+        { 2, 7.2875f, -1.5875f, -50.8936f, 0.9999f, 0.9999f, 5 },
+    });
+
+    inline constexpr auto kSpiderRunFrame006 = std::to_array<PlayerSpritePart>({
+        { 2, 1.0125f, -0.4875f, -314.8440f, -0.8837f, 0.8837f, 0 },
+        { 2, 2.7500f, 0.5500f, -14.7122f, 0.8457f, 0.9764f, 1 },
+        { 6, -2.4750f, 1.1375f, -5.2544f, 0.9999f, 0.9999f, 2 },
+        { 0, 0.1500f, 2.4625f, -0.7833f, 0.9999f, 0.9999f, 3 },
+        { 4, -5.2500f, -1.3625f, 34.2328f, 1.0717f, 0.9246f, 4 },
+        { 2, 6.3250f, -2.8625f, -27.1717f, 0.9999f, 0.9999f, 5 },
+    });
+
+    inline constexpr auto kSpiderRunFrame007 = std::to_array<PlayerSpritePart>({
+        { 2, 4.2500f, -0.6250f, -298.9303f, -0.8239f, 0.9792f, 0 },
+        { 2, 1.9375f, -0.6500f, -23.1839f, 0.8837f, 0.8837f, 1 },
+        { 6, -1.6625f, 1.5250f, -37.6029f, 0.9999f, 0.9999f, 2 },
+        { 0, 0.1500f, 1.9625f, 0.2605f, 1.0000f, 1.0000f, 3 },
+        { 4, -2.9250f, -2.5500f, 11.8518f, 1.1799f, 0.7707f, 4 },
+        { 2, 3.6875f, -3.1375f, -1.1696f, 0.9999f, 0.9999f, 5 },
+    });
+
+    inline constexpr auto spiderJumpFrame001 = std::to_array<PlayerSpritePart>({
+        { 2, 7.5750f, -2.2375f, -24.2552f, -0.8838f, 0.8838f, 0 },
+        { 2, 2.2250f, -2.2875f, 13.9951f, 0.8838f, 0.8838f, 1 },
+        { 6, -2.2000f, 0.0375f, 11.0169f, 1.0000f, 1.0000f, 2 },
+        { 0, 0.0375f, 2.0125f, -3.2418f, 1.0000f, 1.0000f, 3 },
+        { 4, -7.5250f, -1.8500f, 57.6651f, 0.9999f, 0.9999f, 4 },
+        { 2, -2.7375f, -2.6875f, 18.9595f, 1.0000f, 1.0000f, 5 },
+    });
+
+    inline constexpr auto kSpiderFallFrame001 = std::to_array<PlayerSpritePart>({
+        { 2, 5.0125f, -3.8375f, -322.2662f, -0.8837f, 0.8837f, 0 },
+        { 2, 0.8500f, -2.6375f, -27.2104f, 0.8837f, 0.8837f, 1 },
+        { 6, -2.1750f, -0.3375f, -38.6667f, 1.0000f, 1.0000f, 2 },
+        { 0, 0.1500f, 1.7250f, 2.5721f, 1.0000f, 1.0000f, 3 },
+        { 4, -2.6375f, -4.0125f, -14.9728f, 0.9999f, 0.9999f, 4 },
+        { 2, -0.1375f, -3.8625f, -44.6279f, 0.9999f, 0.9999f, 5 },
+    });
+
+    inline constexpr auto kSpiderFallFrame002 = std::to_array<PlayerSpritePart>({
+        { 2, 4.9625f, -3.8625f, -316.1583f, -0.8822f, 0.8822f, 0 },
+        { 2, 1.0625f, -2.7125f, -27.0928f, 0.8825f, 0.8825f, 1 },
+        { 6, -2.2000f, -0.4000f, -38.6150f, 0.9983f, 0.9983f, 2 },
+        { 0, 0.1625f, 1.6625f, 3.7888f, 0.9997f, 0.9997f, 3 },
+        { 4, -2.3125f, -4.1250f, -23.5493f, 0.9987f, 0.9987f, 4 },
+        { 2, 0.1750f, -3.8625f, -49.3599f, 0.9983f, 0.9983f, 5 },
+    });
+
+    inline constexpr auto kSpiderFallFrame003 = std::to_array<PlayerSpritePart>({
+        { 2, 4.9000f, -3.9000f, -312.3229f, -0.8837f, 0.8837f, 0 },
+        { 2, 1.1875f, -2.7500f, -27.2104f, 0.8837f, 0.8837f, 1 },
+        { 6, -2.1750f, -0.4500f, -38.6667f, 1.0000f, 1.0000f, 2 },
+        { 0, 0.1625f, 1.6125f, 4.7642f, 1.0000f, 1.0000f, 3 },
+        { 4, -2.0750f, -4.1750f, -29.1635f, 0.9999f, 0.9999f, 4 },
+        { 2, 0.3250f, -3.8125f, -52.2689f, 0.9999f, 0.9999f, 5 },
+    });
+
+    inline constexpr auto kSpiderFallFrame004 = std::to_array<PlayerSpritePart>({
+        { 2, 4.9375f, -3.8750f, -316.6614f, -0.8816f, 0.8816f, 0 },
+        { 2, 1.0250f, -2.7250f, -27.0768f, 0.8819f, 0.8819f, 1 },
+        { 6, -2.2000f, -0.4000f, -38.6097f, 0.9975f, 0.9975f, 2 },
+        { 0, 0.1750f, 1.6625f, 3.7896f, 0.9996f, 0.9996f, 3 },
+        { 4, -2.3125f, -4.1250f, -23.0863f, 0.9982f, 0.9982f, 4 },
+        { 2, 0.1125f, -3.8750f, -48.6585f, 0.9975f, 0.9975f, 5 },
+    });
+
+    inline constexpr auto kSpiderFallFrame005 = std::to_array<PlayerSpritePart>({
+        { 2, 4.9750f, -3.8375f, -321.1769f, -0.8823f, 0.8823f, 0 },
+        { 2, 0.8625f, -2.6875f, -27.0914f, 0.8825f, 0.8825f, 1 },
+        { 6, -2.2000f, -0.3750f, -38.6150f, 0.9983f, 0.9983f, 2 },
+        { 0, 0.1500f, 1.6875f, 3.0439f, 0.9998f, 0.9998f, 3 },
+        { 4, -2.5500f, -4.0125f, -17.2775f, 0.9990f, 0.9990f, 4 },
+        { 2, -0.0625f, -3.9125f, -45.1362f, 0.9983f, 0.9983f, 5 },
+    });
+
+    inline constexpr auto kSpiderWalkFrame001 = std::to_array<PlayerSpritePart>({
+        { 2, 7.1750f, -3.3625f, 0.0000f, -0.8838f, 0.8838f, 0 },
+        { 2, 2.5125f, -3.3625f, 0.0000f, 0.8838f, 0.8838f, 1 },
+        { 6, -2.2250f, 0.0375f, -7.6821f, 1.0000f, 1.0000f, 2 },
+        { 0, 0.1500f, 1.7875f, 0.2981f, 1.0000f, 1.0000f, 3 },
+        { 4, -6.6500f, -3.4500f, 38.9640f, 0.9999f, 0.9999f, 4 },
+        { 2, -1.0125f, -2.9875f, 0.0000f, 1.0000f, 1.0000f, 5 },
+    });
+
+    inline constexpr auto kSpiderWalkFrame002 = std::to_array<PlayerSpritePart>({
+        { 2, 4.9500f, -3.3250f, -358.9798f, -0.8838f, 0.8838f, 0 },
+        { 2, 0.0375f, -3.3000f, 5.9558f, 0.8359f, 0.8838f, 1 },
+        { 6, -3.4625f, -0.8250f, -7.2214f, 1.1753f, 1.0000f, 2 },
+        { 0, 0.1625f, 2.0000f, -0.2684f, 1.0000f, 1.0000f, 3 },
+        { 4, -8.0875f, -3.5875f, 45.7195f, 0.9999f, 1.0310f, 4 },
+        { 2, -0.6000f, -2.1250f, 27.4395f, 1.0000f, 1.0000f, 5 },
+    });
+
+    inline constexpr auto kSpiderWalkFrame003 = std::to_array<PlayerSpritePart>({
+        { 2, 3.1250f, -3.3000f, -357.4881f, -0.8838f, 0.8838f, 0 },
+        { 2, 0.8250f, -3.1500f, 30.4086f, 0.7574f, 0.8838f, 1 },
+        { 6, -3.5875f, -0.6875f, -8.9071f, 1.5850f, 1.0000f, 2 },
+        { 0, 0.1625f, 2.4125f, -1.5410f, 0.9999f, 0.9999f, 3 },
+        { 4, -9.4375f, -3.6625f, 52.5356f, 0.9342f, 1.1476f, 4 },
+        { 2, 2.8500f, -1.7250f, 5.6893f, 1.0000f, 1.0000f, 5 },
+    });
+
+    inline constexpr auto kSpiderWalkFrame004 = std::to_array<PlayerSpritePart>({
+        { 2, 3.4875f, -3.0625f, -334.5984f, -0.8837f, 0.8837f, 0 },
+        { 2, 2.2500f, -2.1000f, 16.0395f, 0.8152f, 0.8463f, 1 },
+        { 6, -3.4500f, -0.4000f, -5.9498f, 1.6866f, 1.0000f, 2 },
+        { 0, 0.1500f, 2.6250f, -2.4037f, 1.0000f, 1.0000f, 3 },
+        { 4, -10.5125f, -3.5250f, 57.9726f, 0.9999f, 1.2805f, 4 },
+        { 2, 5.6750f, -2.7125f, -28.5370f, 0.9539f, 1.0235f, 5 },
+    });
+
+    inline constexpr auto kSpiderWalkFrame005 = std::to_array<PlayerSpritePart>({
+        { 2, 4.3625f, -2.1375f, -338.3883f, -0.8837f, 0.8837f, 0 },
+        { 2, 3.3000f, -1.8750f, -19.9875f, 0.7950f, 0.9433f, 1 },
+        { 6, -3.8000f, 0.1000f, -3.2427f, 1.0332f, 1.0000f, 2 },
+        { 0, 0.1625f, 2.5125f, -1.8048f, 0.9998f, 0.9998f, 3 },
+        { 4, -6.8000f, -2.2125f, 43.9688f, 0.9999f, 0.9999f, 4 },
+        { 2, 4.4875f, -2.7125f, -8.2481f, 0.9879f, 1.0146f, 5 },
+    });
+
+    inline constexpr auto kSpiderWalkFrame006 = std::to_array<PlayerSpritePart>({
+        { 2, 6.4500f, -1.0500f, -343.5793f, -0.8837f, 0.8837f, 0 },
+        { 2, 4.3250f, -2.7250f, -20.9353f, 0.8457f, 0.9764f, 1 },
+        { 6, -2.9875f, 0.7500f, -13.1425f, 1.0000f, 1.0000f, 2 },
+        { 0, 0.1500f, 2.2000f, -0.7859f, 0.9999f, 0.9999f, 3 },
+        { 4, -4.5875f, -1.9500f, 19.6509f, 1.1360f, 0.9032f, 4 },
+        { 2, 2.6250f, -2.8375f, -5.0584f, 0.9790f, 0.9991f, 5 },
+    });
+
+    inline constexpr auto kSpiderWalkFrame007 = std::to_array<PlayerSpritePart>({
+        { 2, 7.7375f, -2.9250f, -11.1062f, -0.8240f, 0.9792f, 0 },
+        { 2, 3.8500f, -3.1250f, -10.2298f, 0.8838f, 0.8838f, 1 },
+        { 6, -2.7625f, 0.3250f, -15.9304f, 1.0000f, 1.0000f, 2 },
+        { 0, 0.1500f, 1.8500f, 0.2605f, 1.0000f, 1.0000f, 3 },
+        { 4, -5.0125f, -3.0625f, 18.7049f, 1.0891f, 0.8808f, 4 },
+        { 2, 0.8750f, -2.9250f, 0.0000f, 0.9782f, 1.0085f, 5 },
+    });
+
+    inline constexpr auto kSpiderIdleFrame001 = std::to_array<PlayerSpritePart>({
+        { 2, 2.5125f, -3.3625f, 0.0000f, 0.8838f, 0.8838f, 0 },
+        { 2, 7.1750f, -3.3625f, 0.0000f, -0.8838f, 0.8838f, 1 },
+        { 6, -2.2250f, 0.0375f, -7.6821f, 1.0000f, 1.0000f, 2 },
+        { 0, 0.2875f, 2.0250f, 0.0000f, 1.0000f, 1.0000f, 3 },
+        { 4, -6.6500f, -3.4500f, 38.9640f, 0.9999f, 0.9999f, 4 },
+        { 2, -1.2375f, -2.9875f, 0.0000f, 1.0000f, 1.0000f, 5 },
+    });
+
+    inline constexpr auto kSpiderRunFrames = std::to_array<PlayerFrame>({
+        { kSpiderRunFrame001, 6, 0.040000f },
+        { kSpiderRunFrame002, 6, 0.040000f },
+        { kSpiderRunFrame003, 6, 0.040000f },
+        { kSpiderRunFrame004, 6, 0.040000f },
+        { kSpiderRunFrame005, 6, 0.040000f },
+        { kSpiderRunFrame006, 6, 0.040000f },
+        { kSpiderRunFrame007, 6, 0.040000f },
+    });
+
+    inline constexpr auto kSpiderJumpFrames = std::to_array<PlayerFrame>({
+        { spiderJumpFrame001, 6, 0.040000f },
+    });
+
+    inline constexpr auto kSpiderFallFrames = std::to_array<PlayerFrame>({
+        { kSpiderFallFrame001, 6, 0.050000f },
+        { kSpiderFallFrame002, 6, 0.050000f },
+        { kSpiderFallFrame003, 6, 0.050000f },
+        { kSpiderFallFrame004, 6, 0.050000f },
+        { kSpiderFallFrame005, 6, 0.050000f },
+    });
+
+    inline constexpr auto spiderWalkFrames = std::to_array<PlayerFrame>({
+        { kSpiderWalkFrame001, 6, 0.030000f },
+        { kSpiderWalkFrame002, 6, 0.030000f },
+        { kSpiderWalkFrame003, 6, 0.030000f },
+        { kSpiderWalkFrame004, 6, 0.030000f },
+        { kSpiderWalkFrame005, 6, 0.030000f },
+        { kSpiderWalkFrame006, 6, 0.030000f },
+        { kSpiderWalkFrame007, 6, 0.030000f },
+    });
+
+    inline constexpr auto kSpiderAnimations = std::to_array<PlayerFrame>({
+        { kSpiderRunFrames },
+        { kSpiderJumpFrames, 1 },
+        { kSpiderFallFrames, 5 },
+        { spiderWalkFrames, 7 },
+        { kSpiderIdleFrames, 1 },
+    });
+
+}
+
+   
+}
+
+

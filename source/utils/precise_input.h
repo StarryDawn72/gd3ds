@@ -2,13 +2,13 @@
 #include <3ds.h>
 #include <stdbool.h>
 
-typedef enum {
+enum class {
     PI_PLAYER_1,
     PI_PLAYER_2,
     PI_PLAYER_COUNT
 } PreciseInputPlayer;
 
-typedef struct {
+struct {
     u32 tick;
     bool down;
 } PreciseInputEvent;

@@ -4,13 +4,13 @@
 
 #define PARTICLE_DEF_COUNT (30)
 
-typedef enum {
+enum class {
     TEXTURE_SQUARE_PNG,
     TEXTURE_CIRCLE_PNG,
 } TextureFileName;
 
 // Billion properties
-typedef struct {
+struct {
     float angle;
     float angleVariance;
     int blendFuncDestination;
@@ -64,7 +64,7 @@ typedef struct {
     TextureFileName textureFileName;
 } ParticleDefinition;
 
-typedef struct {
+struct {
     char *name;
     const ParticleDefinition *def;
 } ParticleDefenitionName;

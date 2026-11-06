@@ -172,13 +172,13 @@ char *died_to_text[DEATH_REASON_COUNT] = {
     "Bro died to the ground",
 };
 
-typedef enum {
+enum class {
     SCALE_IN,
     WAITING,
     SCALE_OUT,
 } NewBestState;
 
-typedef struct {
+struct {
     bool active;
 
     int progress;

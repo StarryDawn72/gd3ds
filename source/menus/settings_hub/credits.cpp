@@ -9,7 +9,7 @@
 #include "main.h"
 #include "menus/settings_hub/credits.h"
 
-typedef struct CreditsEntries {
+struct CreditsEntries {
     char *contributor;
     char *contribution;
     float name_scale;

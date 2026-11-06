@@ -4,7 +4,7 @@
 #include "particle_definitions.h"
 
 // Struct of arrays my beloved
-typedef struct {
+struct {
     int count;
     int capacity;
 
@@ -51,7 +51,7 @@ typedef struct {
     float* deltaRadius;
 } ParticleData;
 
-typedef struct {
+struct {
     ParticleData data;
     ParticleDefinition cfg;
 

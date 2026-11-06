@@ -12,7 +12,7 @@
 // Stupid hack lmao
 #define GFX_TOP_BUT_ABOVE_LEVEL (2)
 
-typedef struct {
+struct {
     float duration;
 
     float start_rad;
@@ -36,7 +36,7 @@ typedef struct {
     EaseTypes end_opacity_ease;
 } UseEffectDefinition;
 
-typedef struct {
+struct {
     float x;
     float y;
 
@@ -58,7 +58,7 @@ typedef struct {
     bool active;
 } UseEffect;
 
-typedef struct {
+struct {
     UseEffect *pool;
     int capacity;
     //whether the effect should have mirror, fading, and world-space transforms

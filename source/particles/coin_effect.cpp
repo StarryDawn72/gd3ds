@@ -6,7 +6,7 @@
 #include "utils/gfx.h"
 #include "easing.h"
 
-typedef struct {
+struct {
     float x;
     float vel_x;
     float y;

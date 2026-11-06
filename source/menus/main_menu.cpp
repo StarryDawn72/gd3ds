@@ -177,7 +177,7 @@ static void handle_input() {
     holding = pressing;
 }
 
-static void handle_players() {
+static void handlePlayers() {
     state.old_player = title_screen_player;
     handle_title_screen_player(&title_screen_player);
 
@@ -303,7 +303,7 @@ static void main_menu_update(UIScreen *s, UIInput *input){
 
     if (!state.dead) {
         for (int i = 0; i < 4; i++) {
-            handle_players();
+            handlePlayers();
         }
     }
     

@@ -29,19 +29,19 @@ int channels_used[COL_CHANNEL_NUM];
 #define MAX_CHECKPOINTS 100
 #define CHECKPOINT_GFX_ID 6
 
-typedef struct {
+struct {
     int source_obj;
     float time_run;
     unsigned int activation_order;
     bool started_fade_out;
 } PulseSnapshot;
 
-typedef struct {
+struct {
     int obj;
     float rotation, visual_rotation;
 } RotateObjectSnapshot;
 
-typedef struct CheckpointData {
+struct CheckpointData {
     Player p1;
     Player p2;
 

@@ -14,8 +14,8 @@
 
 #include "menus/icon_kit.h"
 #include "collision.h"
-#include "robot_anim_data.h"
-#include "spider_anim_data.h"
+// #include "robot_anim_data.h"
+// #include "spider_anim_data.h"
 #include "math_helpers.h"
 
 #include "main.h"
@@ -130,15 +130,6 @@ void set_animation(Player *player, int anim_id) {
         player->anim_timer = 0;
         player->blend_timer = 0;
     }
-}
-
-float get_blend_duration(Player *player) {
-    if (player->gamemode == GAMEMODE_ROBOT) {
-        return ROBOT_BLEND_DURATION;
-    } else if (player->gamemode == GAMEMODE_SPIDER) {
-        return SPIDER_BLEND_DURATION;
-    }
-    return 0.1f;
 }
 
 void set_blend_timer(Player *player, float timer) {
@@ -1262,7 +1253,7 @@ void run_player(Player *player) {
     player->buffer_ufo = false;
 }
 
-void handle_player(Player *player) {
+void handlePlayer(Player *player) {
     u64 start_player = svcGetSystemTick();
     if (curr_input.holdJump) {
         if (curr_input.pressedJump) player->holding_jump_cancelled = false;

@@ -44,7 +44,7 @@ static char reload_path[320];
 char current_path[320] = { 0 };
 char last_path[320] = { 1 };
 
-typedef struct {
+struct {
     char path[256];
     bool is_dir;
 } LevelCardData;

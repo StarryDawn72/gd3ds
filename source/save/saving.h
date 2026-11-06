@@ -22,7 +22,7 @@
 #define SAVE_EXTERNAL_KEY "external_levels"
 #define SAVE_SAVED_LEVEL_KEY "saved_levels"
 
-typedef struct LevelData {
+struct LevelData {
     int level_id;
     int attempts;
     int jumps;
@@ -36,7 +36,7 @@ typedef struct LevelData {
 
 bool level_has_rate(const LevelData *data);
 
-typedef struct SavedLevelDataEntry {
+struct SavedLevelDataEntry {
     char *key;
     int version;
     SearchEntry search_entry;
@@ -45,40 +45,40 @@ typedef struct SavedLevelDataEntry {
     LevelEntry level_entry;
 } SavedLevelDataEntry;
 
-typedef struct SavedLevelDataList {
+struct SavedLevelDataList {
     SavedLevelDataEntry *list;
     size_t capacity;
     size_t count;
 } SavedLevelDataList;
 
-typedef struct LevelDataEntry {
+struct LevelDataEntry {
     char *key;
     LevelData data;
 } LevelDataEntry;
 
-typedef struct LevelDataList {
+struct LevelDataList {
     LevelDataEntry *list;
     size_t capacity;
     size_t count;
 } LevelDataList;
 
-typedef struct ServerFile {
+struct ServerFile {
     LevelDataList online_levels;
     LevelDataList main_levels;
     SavedLevelDataList saved_levels;
 } ServerFile;
 
-typedef struct ExternalLevelFile {
+struct ExternalLevelFile {
     LevelDataList external_levels;  
 } ExternalLevelFile;
 
-typedef enum {
+enum class {
     LEVEL_LIST_MAIN_LEVELS,
     LEVEL_LIST_EXTERNAL,
     LEVEL_LIST_ONLINE,
 } LevelListType;
 
-typedef enum {
+enum class {
     SAVE_ROBTOP,
     SAVE_1P9_GDPS,
     SAVE_EXTERNAL,
@@ -86,7 +86,7 @@ typedef enum {
     SAVE_TYPE_COUNT,
 } SaveType;
 
-typedef struct SavingTask {
+struct SavingTask {
     struct json_object *root;
     char file[256];
     char tmp_file[256];
@@ -94,7 +94,7 @@ typedef struct SavingTask {
     volatile bool running;
 } SavingTask;
 
-typedef enum {
+enum class {
     SAVE_ERROR_NONE,
     SAVE_ERROR_JSON_FAIL,
     SAVE_ERROR_MAKE_DATA_LIST,

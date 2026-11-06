@@ -2,7 +2,7 @@
 #include "wav_player.h"
 #include "mp3_player.h"
 
-typedef struct {
+struct {
     char *name;
     SFX *sound;
 } SFXKVP;

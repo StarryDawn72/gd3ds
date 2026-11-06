@@ -3,7 +3,7 @@
 
 #include <3ds.h>
 
-typedef struct SearchEntry {
+struct SearchEntry {
     char name[20+1];
     char *description;
     int levelId;
@@ -31,13 +31,13 @@ typedef struct SearchEntry {
     int songIndex;
 } SearchEntry;
 
-typedef struct CreatorEntry {
+struct CreatorEntry {
     int userId;
     char creatorName[20+1];
     int accountId;
 } CreatorEntry;
 
-typedef struct SongEntry {
+struct SongEntry {
     int ngSongId;
     char songTitle[64];
     char artistName[32];
@@ -45,21 +45,21 @@ typedef struct SongEntry {
     char songLink[256];
 } SongEntry;
 
-typedef struct PageEntry {
+struct PageEntry {
     int totalLevels;
     int currentOffset;
     int amount;
     int totalPages;
 } PageEntry;
 
-typedef struct LevelEntry {
+struct LevelEntry {
     int levelId;
     char *levelString;
     char uploadDate[32];
     char updateDate[32];
 } LevelEntry;
 
-typedef struct CommentEntry {
+struct CommentEntry {
     int levelId;
     char name[24];
     int authorAccountId;
@@ -79,11 +79,11 @@ typedef struct CommentEntry {
     int glowCol;
 } CommentEntry;
 
-typedef struct CommentAuthorEntry {
+struct CommentAuthorEntry {
     
 } CommentAuthorEntry;
 
-typedef struct UpdateData {
+struct UpdateData {
     bool isAvailable;
     char releaseTitle[64];
     char *releaseBody;

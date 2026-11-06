@@ -28,7 +28,7 @@
 #define SAVED_LEVELS_NAME "saved_levels"
 #define SAVED_LEVELS_DIR CONFIG_ROOT SAVED_LEVELS_NAME
 
-typedef struct {
+struct {
     struct json_object* root;
     char path[256];
 } Config;

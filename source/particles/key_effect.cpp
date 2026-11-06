@@ -8,7 +8,7 @@
 #include "utils/gfx.h"
 #include "easing.h"
 
-typedef struct {
+struct {
     float x, y;
     float vel_x, vel_y;
     float gravity;

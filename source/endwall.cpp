@@ -9,7 +9,6 @@
 #include "particles/rays.h"
 #include "particles/circles.h"
 
-#include "menus/core/ui_screen.h"
 #include "menus/level_complete.h"
 #include "practice.h"
 #include "menus/level_select.h"
@@ -22,13 +21,13 @@ static float completion_timer = 0.0f;
 
 #include "save/saving.h"
 
-typedef enum {
+enum class {
     SCALE_IN,
     WAITING,
     SCALE_OUT,
 } LevelCompleteState;
 
-typedef struct {
+struct {
     bool active;
     
     LevelCompleteState state;
@@ -189,7 +188,7 @@ int handle_wall_cutscene(float delta, UIInput *touch) {
                             stars = current_main_level_pack->levels[curr_level_id].stars;
 
                             // Add if demon
-                            if (current_main_level_pack->levels[curr_level_id].difficulty == MAIN_DIFF_DEMON) {
+                            if (current_main_level_pack->levels[curr_level_id].difficulty == Demon) {
                                 total_demons++;
                             }
                         }
